@@ -1,0 +1,361 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+h2 {
+    color: #34495e;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+/* Balance Section */
+.balance {
+    display: flex;
+    justify-content: space-around;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.balance div {
+    text-align: center;
+    flex: 1;
+}
+
+.balance span {
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#balance {
+    color: #f1c40f;
+}
+
+#income {
+    color: #2ecc71;
+}
+
+#expenses {
+    color: #e74c3c;
+}
+
+/* Form Section */
+.form {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    align-items: end;
+}
+
+select, input, button {
+    padding: 12px 16px;
+    border: 2px solid #e0e6ed;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+select:focus, input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+button {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #2980b9, #1f618d);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* List Section */
+.list {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* Charts Section */
+.charts {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.chart-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.chart-container.full-width {
+    grid-template-columns: 1fr;
+}
+
+.chart-item {
+    background: #f8f9fc;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #e0e6ed;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.chart-item h3 {
+    margin-bottom: 15px;
+    color: #34495e;
+    font-size: 1.1em;
+}
+
+.chart-item canvas {
+    max-height: 300px;
+}
+
+#filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+#filters select, #filters input {
+    flex: 1;
+    min-width: 150px;
+}
+
+#btnFilter {
+    background: linear-gradient(135deg, #27ae60, #229954);
+}
+
+#btnFilter:hover {
+    background: linear-gradient(135deg, #229954, #1e8449);
+}
+
+#btnClear {
+    background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+}
+
+#btnClear:hover {
+    background: linear-gradient(135deg, #7f8c8d, #6c7b7d);
+}
+
+/* Transaction List */
+#txList {
+    list-style: none;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 10px;
+    background: #f8f9fc;
+    border-radius: 10px;
+    border-left: 5px solid;
+    transition: all 0.3s ease;
+}
+
+.transaction-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.transaction-item.income {
+    border-left-color: #27ae60;
+    background: linear-gradient(90deg, #d5f4e6, #f8f9fc);
+}
+
+.transaction-item.expense {
+    border-left-color: #e74c3c;
+    background: linear-gradient(90deg, #fdf2f2, #f8f9fc);
+}
+
+.transaction-details {
+    flex: 1;
+}
+
+.transaction-amount {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.transaction-amount.income {
+    color: #27ae60;
+}
+
+.transaction-amount.expense {
+    color: #e74c3c;
+}
+
+.transaction-meta {
+    font-size: 0.9em;
+    color: #7f8c8d;
+    margin-top: 5px;
+}
+
+.transaction-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-edit, .btn-delete {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.btn-edit {
+    background: #f39c12;
+    color: white;
+}
+
+.btn-edit:hover {
+    background: #e67e22;
+}
+
+.btn-delete {
+    background: #e74c3c;
+    color: white;
+}
+
+.btn-delete:hover {
+    background: #c0392b;
+}
+
+/* Loading and Messages */
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: #7f8c8d;
+}
+
+.message {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .balance {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    form {
+        grid-template-columns: 1fr;
+    }
+    
+    #filters {
+        flex-direction: column;
+    }
+    
+    .transaction-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .transaction-actions {
+        align-self: flex-end;
+    }
+    
+    .chart-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .chart-item canvas {
+        max-height: 250px;
+    }
+}
+
+/* Custom Scrollbar */
+#txList::-webkit-scrollbar {
+    width: 8px;
+}
+
+#txList::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+#txList::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+}
+
+#txList::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
